@@ -1,34 +1,63 @@
 # ⌨️ Typing Speed Test
 
-A beautiful and modern typing speed test application to improve your keyboard skills.
+<div align="center">
 
 ![Typing Speed Test](https://i.imgur.com/placeholder.png)
 
+A beautiful and modern typing speed test application to improve your keyboard skills.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/ihsas)
+
+</div>
+
 ## ✨ Features
 
-- ⚡ Real-time WPM and accuracy tracking
-- 🌓 Dark/Light mode
-- 📊 Detailed performance statistics
-- ⌨️ Multiple test modes (30s, 60s, 120s)
-- 📱 Responsive design
-- 🎯 Error highlighting and analysis
+<div align="center">
+
+| Feature | Description |
+|---------|-------------|
+| ⚡ Real-time | Instant WPM and accuracy tracking |
+| 🌓 Theme | Beautiful dark/light mode |
+| 📊 Stats | Detailed performance metrics |
+| ⌨️ Modes | Multiple test durations (30s, 60s, 120s) |
+| 📱 Design | Fully responsive layout |
+| 🎯 Analysis | Smart error highlighting |
+
+</div>
 
 ## 🚀 Quick Start
 
-1. Clone and open `index.html` in your browser
-2. Select test duration
-3. Start typing!
+```bash
+# Clone the repository
+git clone https://github.com/Ihsas01/Typing-Speed-Test
+
+# Open index.html in your browser
+# That's it! No build process required 🎉
+```
 
 ## ⌨️ Keyboard Shortcuts
 
-- `Space` - Start/Reset
-- `Esc` - End test
-- `Ctrl/Cmd + D` - Toggle theme
+<div align="center">
+
+| Key | Action |
+|-----|--------|
+| `Space` | Start/Reset test |
+| `Esc` | End current test |
+| `Ctrl/Cmd + D` | Toggle theme |
+
+</div>
 
 ## 📝 License
 
-MIT License - Feel free to use and modify!
+This project is licensed under the MIT License - feel free to use and modify!
 
 ---
 
+<div align="center">
+
 Made with ❤️ by Ihsas
+
+
+
+</div>
