@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Typing Speed Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-keyboard"></i> Advanced Typing Speed Test</h1>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-sun"></i>
+            </div>
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label for="difficulty"><i class="fas fa-layer-group"></i> Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="duration"><i class="fas fa-clock"></i> Duration:</label>
+                <select id="duration">
+                    <option value="30">30 seconds</option>
+                    <option value="60" selected>1 minute</option>
+                    <option value="120">2 minutes</option>
+                    <option value="300">5 minutes</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="sound"><i class="fas fa-volume-up"></i> Sound:</label>
+                <select id="sound">
+                    <option value="on" selected>On</option>
+                    <option value="off">Off</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span id="wpm">0</span>
+                <label><i class="fas fa-tachometer-alt"></i> WPM</label>
+            </div>
+            <div class="stat-box">
+                <span id="accuracy">100%</span>
+                <label><i class="fas fa-bullseye"></i> Accuracy</label>
+            </div>
+            <div class="stat-box">
+                <span id="time">60</span>
+                <label><i class="fas fa-hourglass-half"></i> Time</label>
+            </div>
+            <div class="stat-box">
+                <span id="cpm">0</span>
+                <label><i class="fas fa-font"></i> CPM</label>
+            </div>
+        </div>
+
+        <div class="text-display" id="text-display">
+            <!-- Text will be inserted here by JavaScript -->
+        </div>
+
+        <div class="keyboard-hints">
+            <div class="hint">
+                <kbd>Esc</kbd> - Restart Test
+            </div>
+            <div class="hint">
+                <kbd>Space</kbd> - New Text
+            </div>
+            <div class="hint">
+                <kbd>Tab</kbd> - Focus Input
+            </div>
+        </div>
+
+        <textarea 
+            id="text-input" 
+            placeholder="Start typing here... (Press Tab to focus)"
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+        ></textarea>
+
+        <div class="controls">
+            <button id="restart-btn"><i class="fas fa-redo"></i> Restart Test</button>
+            <button id="new-text-btn"><i class="fas fa-sync"></i> New Text</button>
+            <button id="history-btn"><i class="fas fa-history"></i> History</button>
+        </div>
+
+        <div class="results" id="results">
+            <h2><i class="fas fa-chart-line"></i> Test Results</h2>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <span><i class="fas fa-trophy"></i> Best WPM</span>
+                    <span id="best-wpm">0</span>
+                </div>
+                <div class="result-stat">
+                    <span><i class="fas fa-chart-bar"></i> Average WPM</span>
+                    <span id="avg-wpm">0</span>
+                </div>
+                <div class="result-stat">
+                    <span><i class="fas fa-check-circle"></i> Tests Completed</span>
+                    <span id="tests-completed">0</span>
+                </div>
+            </div>
+            <div class="advanced-stats">
+                <div class="stat-chart">
+                    <canvas id="wpm-chart"></canvas>
+                </div>
+                <div class="stat-details">
+                    <div class="detail-item">
+                        <span>Best Accuracy:</span>
+                        <span id="best-accuracy">0%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Average Accuracy:</span>
+                        <span id="avg-accuracy">0%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Total Characters:</span>
+                        <span id="total-chars">0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Total Words:</span>
+                        <span id="total-words">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="history-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-history"></i> Test History</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="history-filters">
+                        <select id="history-difficulty">
+                            <option value="all">All Difficulties</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <select id="history-time">
+                            <option value="all">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                    <div class="history-list" id="history-list">
+                        <!-- History items will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="sentences.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
