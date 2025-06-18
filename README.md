@@ -31,4 +31,4 @@ MIT License - Feel free to use and modify!
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by Ihsas
